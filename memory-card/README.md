@@ -1,16 +1,56 @@
-# React + Vite
+# Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Pokemon-themed memory card game built with React. Test your memory by clicking each Pokemon card only once — click the same card twice and it's game over!
 
-Currently, two official plugins are available:
+## How to Play
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Cards are shuffled and displayed at the start of the game
+- Click a card to score a point — the board reshuffles after every click
+- **Don't click the same card twice** or the game ends
+- Beat your own best score across multiple rounds
+- Click all 12 cards without repeating to win
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 12 random Pokemon fetched from the [PokeAPI](https://pokeapi.co/) on every game load
+- Live score tracker and persistent best score
+- Cards shuffle on every click to keep you on your toes
+- Win detection when all cards are clicked without a repeat
+- Animated pokeball loading spinner while fetching data
+- Smooth card hover animations
+- Fully responsive grid layout
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** — component-based UI and state management with hooks
+- **Vite** — fast dev server and production bundler
+- **CSS** — custom styling, no UI libraries
+- **PokeAPI** — free public API for Pokemon data and artwork
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Card.jsx          # Individual Pokemon card
+│   ├── GameBoard.jsx     # Responsive card grid
+│   ├── Header.jsx        # Title, instructions, scoreboard
+│   └── ScoreBoard.jsx    # Current score and best score display
+├── App.jsx               # Game logic, API fetch, state management
+├── App.css               # Layout and overlay styles
+└── index.css             # Global reset and background
+```
+
